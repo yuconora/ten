@@ -8,10 +8,7 @@
 
 #import "AboutUSVC.h"
 
-@interface AboutUSVC (){
-    UIScrollView *_sc;
-}
-
+@interface AboutUSVC ()
 
 @end
 
