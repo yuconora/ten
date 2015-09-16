@@ -17,11 +17,11 @@
 #import "FavoriteCell.h"
 #import "FavoriteModel.h"
 #import "DBManager.h"
+#import "FVCustomAlertView.h"
 @interface FavoriteVC ()<UITableViewDataSource,UITableViewDelegate>{
     UITableView *_tb;
     NSMutableArray *_dataArray;
     NSMutableArray *_dataSource;
-    NSMutableArray *_kengdie;
 }
 
 @end
@@ -33,11 +33,10 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     _dataSource = [NSMutableArray array];
-    _kengdie = [NSMutableArray array];
     [self initDataSource];
     [self createTb];
-}
 
+}
 - (void)initDataSource{
     NSMutableArray *cArray = [NSMutableArray array];
     NSMutableArray *nArray = [NSMutableArray array];
@@ -46,24 +45,31 @@
         [_dataSource removeAllObjects];
     }
     _dataSource = [NSMutableArray arrayWithArray:[[DBManager shareManager] responseData]];
-    for (FavoriteModel *model in _dataSource) {
-        NSData *data = [model.dic dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        if ([model.type isEqualToString:@"1"]) {
-            CriticModel *cModel = [[CriticModel alloc] init];
-            [cModel setValuesForKeysWithDictionary:dic];
-            [cArray addObject:cModel];
-        }else if ([model.type isEqualToString:@"2"]){
-            NovelModel *nModel = [[NovelModel alloc] init];
-            [nModel setValuesForKeysWithDictionary:dic];
-            [nArray addObject:nModel];
-        }else if ([model.type isEqualToString:@"3"]){
-            DiagramModel *dModel = [[DiagramModel alloc] init];
-            [dModel setValuesForKeysWithDictionary:dic];
-            [dArray addObject:dModel];
-        }
+        for (FavoriteModel *model in _dataSource) {
+                NSData *data = [model.dic dataUsingEncoding:NSUTF8StringEncoding];
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                if ([model.type isEqualToString:@"1"]) {
+                    CriticModel *cModel = [[CriticModel alloc] init];
+                    [cModel setValuesForKeysWithDictionary:dic];
+                    [cArray addObject:cModel];
+                }else if ([model.type isEqualToString:@"2"]){
+                    NovelModel *nModel = [[NovelModel alloc] init];
+                    [nModel setValuesForKeysWithDictionary:dic];
+                    [nArray addObject:nModel];
+                }else if ([model.type isEqualToString:@"3"]){
+                    DiagramModel *dModel = [[DiagramModel alloc] init];
+                    [dModel setValuesForKeysWithDictionary:dic];
+                    [dArray addObject:dModel];
+                }
+            }
+            _dataArray = [[NSMutableArray alloc]initWithObjects:cArray,nArray,dArray, nil];
+//        }
+}
+- (void)viewWillAppear:(BOOL)animated{
+    if (_dataSource.count==0) {
+        [FVCustomAlertView showDefaultDoneAlertOnView:self.view withTitle:@"还未收藏"];
+        [FVCustomAlertView hideAlertFromView:self.view fading:YES];
     }
-    _dataArray = [[NSMutableArray alloc]initWithObjects:cArray,nArray,dArray, nil];
 }
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"删除";
