@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetPageVC">
+            <connections>
+                <outlet property="text" destination="zXm-jz-MOQ" id="P6u-ut-hCP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bfq-g9-bg8">
+                    <rect key="frame" x="0.0" y="64" width="600" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阅读字体大小" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWa-os-4hT">
+                            <rect key="frame" x="20" y="20" width="120" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="2nW-T2-wYN"/>
+                                <constraint firstAttribute="width" constant="120" id="DE6-Ur-8a6"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="fyn-Ft-D2X"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdT-ht-Tk2">
+                            <rect key="frame" x="525" y="10" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="EBx-jn-wfT"/>
+                                <constraint firstAttribute="height" constant="60" id="dcf-cw-EQs"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <state key="normal" title="大">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="lager:" destination="-1" eventType="touchUpInside" id="3Un-tj-Xok"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbo-k8-ZFW">
+                            <rect key="frame" x="465" y="18" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="CwX-Up-Epd"/>
+                                <constraint firstAttribute="width" constant="45" id="Z6B-Ku-gHh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="中">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="mid:" destination="-1" eventType="touchUpInside" id="mlV-MA-y1N"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anu-gM-eQ3">
+                            <rect key="frame" x="420" y="25" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="Y21-d7-8wP"/>
+                                <constraint firstAttribute="height" constant="30" id="vTP-9X-ahp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="小">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="small:" destination="-1" eventType="touchUpInside" id="Wil-Tb-trQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="anu-gM-eQ3" secondAttribute="centerY" id="1PO-3J-A5j"/>
+                        <constraint firstAttribute="height" constant="80" id="5zQ-0A-YQ6"/>
+                        <constraint firstAttribute="centerY" secondItem="QWa-os-4hT" secondAttribute="centerY" id="GsA-HZ-5BH"/>
+                        <constraint firstAttribute="centerY" secondItem="JdT-ht-Tk2" secondAttribute="centerY" id="KN1-IH-Vpa"/>
+                        <constraint firstItem="QWa-os-4hT" firstAttribute="leading" secondItem="Bfq-g9-bg8" secondAttribute="leading" constant="20" id="Ps4-0I-cMe"/>
+                        <constraint firstItem="JdT-ht-Tk2" firstAttribute="leading" secondItem="Kbo-k8-ZFW" secondAttribute="trailing" constant="15" id="Uy6-6b-ap1"/>
+                        <constraint firstItem="Kbo-k8-ZFW" firstAttribute="leading" secondItem="anu-gM-eQ3" secondAttribute="trailing" constant="15" id="i49-ss-OYK"/>
+                        <constraint firstAttribute="trailing" secondItem="anu-gM-eQ3" secondAttribute="trailing" constant="150" id="it5-4K-0LW"/>
+                        <constraint firstAttribute="centerY" secondItem="Kbo-k8-ZFW" secondAttribute="centerY" id="tuf-qV-PYw"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    我以经老了，在人来人往的大厅，有一位老人他向我走来，他说我认识你，那时的你还很年轻，美丽，你的身边有许许多多的追求者，不过跟那时相比，我更喜欢现在你这经历了沧桑的容颜？——《情人》" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXm-jz-MOQ">
+                    <rect key="frame" x="20" y="164" width="560" height="96"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Bfq-g9-bg8" secondAttribute="trailing" id="2cA-IH-0Fa"/>
+                <constraint firstAttribute="trailing" secondItem="zXm-jz-MOQ" secondAttribute="trailing" constant="20" id="3hf-GW-o3m"/>
+                <constraint firstItem="zXm-jz-MOQ" firstAttribute="top" secondItem="Bfq-g9-bg8" secondAttribute="bottom" constant="20" id="8yZ-CW-jHk"/>
+                <constraint firstItem="zXm-jz-MOQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="eND-43-Mgv"/>
+                <constraint firstItem="Bfq-g9-bg8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nk0-Vk-X5t"/>
+                <constraint firstItem="Bfq-g9-bg8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="vOc-kC-9kw"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

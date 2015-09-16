@@ -1,0 +1,37 @@
+//
+//  TenPrefixHeader.pch
+//  ten_2.0
+//
+//  Created by qianfeng on 9/8/15.
+//  Copyright (c) 2015 __None__. All rights reserved.
+//
+
+#ifndef ten_2_0_TenPrefixHeader_pch
+#define ten_2_0_TenPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "AFNetworking.h"
+#import "UIButton+WebCache.h"
+#import "UIImageView+WebCache.h"
+#import "Tool.h"
+#import "MyControl.h"
+#import "JGProgressHUD.h"
+#import "MJExtension.h"
+#import "UIImage+ImageEffects.h"
+#define SCREEN_WIDTH        [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT       [UIScreen mainScreen].bounds.size.height
+#define NAV_HEIGHT          64
+#define TAB_HEIGHT          49
+#define IMG_HEIGHT          160
+#define CRITIC_URL          @"http://api.shigeten.net/api/Critic/GetCriticList"
+#define NOVEL_URL           @"http://api.shigeten.net/api/Novel/GetNovelList"
+#define DIAGRAM_URL         @"http://api.shigeten.net/api/Diagram/GetDiagramList"
+#define AD_URL              @"http://api.shigeten.net/api/Ad/GetFirstPageAd"
+#define CRITIC_URL_INFO     @"http://api.shigeten.net/api/Critic/GetCriticContent?"
+#define NOVEL_URL_INFO      @"http://api.shigeten.net/api/Novel/GetNovelContent?"
+#define DIAGRAM_URL_INFO    @"http://api.shigeten.net/api/Diagram/GetDiagramContent?"
+#define iOS7                [[[UIDevice currentDevice] systemVersion] floatValue]>=7.0
+#define iOS8                [[[UIDevice currentDevice] systemVersion] floatValue]>=8.0
+#define APPKEY               @"55f0d4dce0f55a8c05008611"
+#endif
